@@ -1,4 +1,5 @@
 import type React from "react"
+import Script from "next/script"
 
 export default function CMPLayout({
   children,
@@ -9,27 +10,14 @@ export default function CMPLayout({
 }) {
   return (
     <div>
+      <Script
+        src="https://storage.googleapis.com/idward-cmp-v2-dev/light/loader.js"
+        strategy="beforeInteractive"
+        idw_cmp_provider={params.cmpType}
+        idw_client_id="MQ=="
+        idw_environment="dev"
+      />
       <h2>CMP Script: {params.cmpType}</h2>
-      {params.cmpType === "inmobi" && (
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Inmobi CMP script
-              console.log('Inmobi CMP script loaded');
-            `,
-          }}
-        />
-      )}
-      {params.cmpType === "uniconsent" && (
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Uniconsent CMP script
-              console.log('Uniconsent CMP script loaded');
-            `,
-          }}
-        />
-      )}
       {children}
     </div>
   )
@@ -38,4 +26,3 @@ export default function CMPLayout({
 export function generateStaticParams() {
   return [{ cmpType: "inmobi" }, { cmpType: "uniconsent" }]
 }
-
