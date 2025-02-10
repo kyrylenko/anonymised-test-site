@@ -25,7 +25,7 @@ export default function DynamicTagTypeLayout({
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-XXXXXXX');
+              })(window,document,'script','dataLayer','GTM-T67QMMM');
             `,
           }}
         />
@@ -43,7 +43,7 @@ export default function DynamicTagTypeLayout({
         </>
       )}
       {cmpType === "inmobi" && tagType === "native" && <InmobiCmpTag />}
-      {cmpType && (
+      {cmpType && tagType === "native" && (
         <Script
           src="https://storage.googleapis.com/idward-cmp-v2-dev/light/loader.js"
           strategy="beforeInteractive"
