@@ -1,4 +1,5 @@
 import type React from "react"
+import Link from "next/link"
 import DynamicTagTypeLayout from "../components/DynamicTagTypeLayout"
 
 export default function TagTypeLayout({
@@ -8,7 +9,10 @@ export default function TagTypeLayout({
   children: React.ReactNode
   params: { tagType: string }
 }) {
-  return <DynamicTagTypeLayout tagType={params.tagType}>{children}</DynamicTagTypeLayout>
+  return <>
+    <Link href="/">Home</Link>
+    <DynamicTagTypeLayout tagType={params.tagType}>{children}</DynamicTagTypeLayout>
+  </>
 }
 
 export function generateStaticParams() {

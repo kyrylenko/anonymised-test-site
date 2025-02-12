@@ -3,7 +3,8 @@
 import type React from "react";
 import Script from "next/script";
 import { useSelectedLayoutSegment } from "next/navigation";
-import InmobiCmpTag from "./InmobiCmpTag";
+//import InmobiCmpTag from "./InmobiCmpTag";
+import ClickIoCmpTag from "./ClickIoCmpTag";
 
 export default function DynamicTagTypeLayout({
   tagType,
@@ -42,7 +43,7 @@ export default function DynamicTagTypeLayout({
           />
         </>
       )}
-      {cmpType === "inmobi" && tagType === "native" && <InmobiCmpTag />}
+      {cmpType === "inmobi" && tagType === "native" && <ClickIoCmpTag />}
       {cmpType && tagType === "native" && (
         <Script
           src="https://storage.googleapis.com/idward-cmp-v2-dev/light/loader.js"
