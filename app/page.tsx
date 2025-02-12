@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CustomLink from "./components/CustomLink";
 
 export default function Home() {
   const tagTypes = ["gtm", "native"];
@@ -13,9 +14,9 @@ export default function Home() {
           cmpTypes.map((cmpType) =>
             pages.map((page) => (
               <li key={`${tagType}-${cmpType}-${page}`}>
-                <Link
+                <CustomLink
                   href={`/${tagType}/${cmpType}/${page}`}
-                >{`${tagType}/${cmpType}/${page}`}</Link>
+                >{`${tagType}/${cmpType}/${page}`}</CustomLink>
               </li>
             ))
           )
