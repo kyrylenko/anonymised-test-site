@@ -1,13 +1,11 @@
-import CustomLink from "@/app/components/CustomLink"
-import Link from "next/link"
-
+import AppLink from "@/app/components/AppLink"
 
 export default function About() {
   return (
     <div>
       <h3>About Page</h3>
       <nav>
-        <CustomLink href="./home">Home</CustomLink> | <CustomLink href="./contact">Contact</CustomLink>
+        <AppLink href="./home">Home</AppLink> | <AppLink href="./contact">Contact</AppLink>
       </nav>
       <p>This is the about page.</p>
     </div>

@@ -1,5 +1,5 @@
-import Link from "next/link";
-import CustomLink from "./components/CustomLink";
+import AppLink from "./components/AppLink";
+import SiteSettings from "./components/SiteSettings";
 
 export default function Home() {
   const tagTypes = ["gtm", "native"];
@@ -14,14 +14,15 @@ export default function Home() {
           cmpTypes.map((cmpType) =>
             pages.map((page) => (
               <li key={`${tagType}-${cmpType}-${page}`}>
-                <CustomLink
+                <AppLink
                   href={`/${tagType}/${cmpType}/${page}`}
-                >{`${tagType}/${cmpType}/${page}`}</CustomLink>
+                >{`${tagType}/${cmpType}/${page}`}</AppLink>
               </li>
             ))
           )
         )}
       </ul>
+      <SiteSettings/>
     </div>
   );
 }

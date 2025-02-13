@@ -1,6 +1,5 @@
 import type React from "react"
-import Link from "next/link"
-import CustomLink from "../components/CustomLink"
+import AppLink from "../components/AppLink"
 import DynamicTagTypeLayout from "../components/DynamicTagTypeLayout"
 
 export default function TagTypeLayout({
@@ -11,7 +10,7 @@ export default function TagTypeLayout({
   params: { tagType: string }
 }) {
   return <>
-    <CustomLink href="/">Home</CustomLink>
+    <AppLink href="/">Home</AppLink>
     <DynamicTagTypeLayout tagType={params.tagType}>{children}</DynamicTagTypeLayout>
   </>
 }
